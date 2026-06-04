@@ -1,0 +1,6 @@
+# Local dependencies only.
+# bandit and radon install inside the sandbox — not needed here.
+
+tensorlake>=0.3.13
+openai>=1.0.0
+python-dotenv>=1.0.0
