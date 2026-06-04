@@ -1,0 +1,87 @@
+{
+  "snapshot_id": "snps_mock_456",
+  "snapshot_type": "MEMORY",
+  "agent_count": 5,
+  "sequential": {
+    "total_time_s": 0.0002238750457763672,
+    "reports": [
+      {
+        "agent_id": 0,
+        "perspective": "Security",
+        "score": 90,
+        "finding": "Mock finding for Security (All checks passed)",
+        "execution_time_s": 3.719329833984375e-05
+      },
+      {
+        "agent_id": 1,
+        "perspective": "Complexity",
+        "score": 90,
+        "finding": "Mock finding for Complexity (All checks passed)",
+        "execution_time_s": 2.6941299438476562e-05
+      },
+      {
+        "agent_id": 2,
+        "perspective": "Docstrings",
+        "score": 90,
+        "finding": "Mock finding for Docstrings (All checks passed)",
+        "execution_time_s": 2.09808349609375e-05
+      },
+      {
+        "agent_id": 3,
+        "perspective": "Tests",
+        "score": 90,
+        "finding": "Mock finding for Tests (All checks passed)",
+        "execution_time_s": 1.811981201171875e-05
+      },
+      {
+        "agent_id": 4,
+        "perspective": "Structure",
+        "score": 90,
+        "finding": "Mock finding for Structure (All checks passed)",
+        "execution_time_s": 1.71661376953125e-05
+      }
+    ]
+  },
+  "parallel": {
+    "total_time_s": 0.00029397010803222656,
+    "speedup": 0.762,
+    "reports": [
+      {
+        "agent_id": 0,
+        "perspective": "Security",
+        "score": 90,
+        "finding": "Mock finding for Security (All checks passed)",
+        "execution_time_s": 2.7894973754882812e-05
+      },
+      {
+        "agent_id": 1,
+        "perspective": "Complexity",
+        "score": 90,
+        "finding": "Mock finding for Complexity (All checks passed)",
+        "execution_time_s": 1.9788742065429688e-05
+      },
+      {
+        "agent_id": 2,
+        "perspective": "Docstrings",
+        "score": 90,
+        "finding": "Mock finding for Docstrings (All checks passed)",
+        "execution_time_s": 1.6927719116210938e-05
+      },
+      {
+        "agent_id": 3,
+        "perspective": "Tests",
+        "score": 90,
+        "finding": "Mock finding for Tests (All checks passed)",
+        "execution_time_s": 1.6927719116210938e-05
+      },
+      {
+        "agent_id": 4,
+        "perspective": "Structure",
+        "score": 90,
+        "finding": "Mock finding for Structure (All checks passed)",
+        "execution_time_s": 1.6927719116210938e-05
+      }
+    ]
+  },
+  "final_report": "### Mock Lead Agent Report\n- Overall Health Score: 90/100\n- Top 3 issues: None (Mock runs are clean).\n- Speedup is highly efficient."
+}
