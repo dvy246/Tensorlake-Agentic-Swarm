@@ -10,7 +10,9 @@ My second attempt at a multi-agent benchmark was technically correct and practic
 
 The agents ran in parallel. The code was clean. And the wall-clock time was barely better than sequential. Each agent had spent the first 90 seconds installing analysis tools before running a single line.
 
-You can solve the concurrency problem perfectly and still lose on setup time. Five agents each paying a 90-second setup tax is 450 seconds of pure overhead before a single analysis runs. Run that at scale (twenty agents, fifty) and the parallelism gains disappear before you measure them.
+You can solve the concurrency problem perfectly and still lose on setup time. 
+
+Five agents each paying a 90-second setup tax is 450 seconds of pure overhead before a single analysis runs. Run that at scale (twenty agents, fifty) and the parallelism gains disappear before you measure them.
 
 The fix was not more threads. It was a memory snapshot. Build the environment once, checkpoint the entire VM state (filesystem, memory, running processes), and fork all five agents from that single frozen moment. Each fork warm-restores rapidly with the tools already loaded. No re-installs. No cold boots.
 
