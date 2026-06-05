@@ -3,48 +3,48 @@
   "snapshot_type": "MEMORY",
   "agent_count": 5,
   "sequential": {
-    "total_time_s": 0.0002338886260986328,
+    "total_time_s": 0.000225067138671875,
     "reports": [
       {
         "agent_id": 0,
         "perspective": "Security",
         "score": 90,
         "finding": "Mock finding for Security (All checks passed)",
-        "execution_time_s": 3.695487976074219e-05
+        "execution_time_s": 3.504753112792969e-05
       },
       {
         "agent_id": 1,
         "perspective": "Complexity",
         "score": 90,
         "finding": "Mock finding for Complexity (All checks passed)",
-        "execution_time_s": 2.8133392333984375e-05
+        "execution_time_s": 2.9087066650390625e-05
       },
       {
         "agent_id": 2,
         "perspective": "Docstrings",
         "score": 90,
         "finding": "Mock finding for Docstrings (All checks passed)",
-        "execution_time_s": 2.3126602172851562e-05
+        "execution_time_s": 2.09808349609375e-05
       },
       {
         "agent_id": 3,
         "perspective": "Tests",
         "score": 90,
         "finding": "Mock finding for Tests (All checks passed)",
-        "execution_time_s": 1.8835067749023438e-05
+        "execution_time_s": 1.9073486328125e-05
       },
       {
         "agent_id": 4,
         "perspective": "Structure",
         "score": 90,
         "finding": "Mock finding for Structure (All checks passed)",
-        "execution_time_s": 1.9311904907226562e-05
+        "execution_time_s": 1.7881393432617188e-05
       }
     ]
   },
   "parallel": {
-    "total_time_s": 0.00030684471130371094,
-    "speedup": 0.762,
+    "total_time_s": 0.0003147125244140625,
+    "speedup": 0.715,
     "reports": [
       {
         "agent_id": 0,
@@ -79,7 +79,7 @@
         "perspective": "Structure",
         "score": 90,
         "finding": "Mock finding for Structure (All checks passed)",
-        "execution_time_s": 1.6689300537109375e-05
+        "execution_time_s": 1.811981201171875e-05
       }
     ]
   },

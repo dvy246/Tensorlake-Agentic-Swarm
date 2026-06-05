@@ -108,7 +108,15 @@ The pattern has five distinct phases. Each one has a single responsibility.
                  aggregate_with_llm(reports)
 ```
 
-Phase 1 runs once. Phases 2 through 4 run every time you want results. The fork is cheap. The base environment build is not, but you only pay that cost once per snapshot.
+### The 5 Orchestration Phases
+
+- **Phase 1 — Base Snapshot:** Spins up a single baseline sandbox, installs analysis tools (`bandit`, `radon`), writes the target code, and checkpoints the entire running VM state using `CheckpointType.MEMORY`. The base sandbox is then terminated, leaving behind the reusable snapshot ID.
+- **Phase 2 — Agent Forking:** Restores 5 independent sandboxes concurrently from the base snapshot using `sandbox.fork(...)`. Each fork is a warm start that inherits all installed tools, environment settings, and target files.
+- **Phase 3 — Sequential Baseline (Timing):** Runs each agent's analysis script (`analyze.py`) one-by-one inside its respective sandbox to measure sequential time as a benchmark denominator.
+- **Phase 4 — Parallel Swarm:** Executes all 5 agents concurrently using `asyncio.gather(...)`. Each agent runs the same analysis script inside its isolated sandbox but with a different focus configuration passed via the `PERSPECTIVE` environment variable.
+- **Phase 5 — LLM Aggregation:** Collects the individual reports (Security, Complexity, Docstrings, Tests, Structure) alongside the timing data, and passes them to the lead LLM (GPT-4o) to synthesize a single prioritized fix list.
+
+Phase 1 runs once. Phases 2 through 5 run every time you want results. The fork is cheap. The base environment build is not, but you only pay that cost once per snapshot.
 
 ---
 
