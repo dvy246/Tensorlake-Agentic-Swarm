@@ -11,10 +11,6 @@ from tensorlake_swarm.config import ANALYZE_SCRIPT, PERSPECTIVES, log
 from tensorlake_swarm.models import AgentReport
 
 
-# ---------------------------------------------------------------------------
-# Phase 2: Single agent — fork from snapshot, run one perspective
-# ---------------------------------------------------------------------------
-
 
 async def run_agent(agent_id: int, snapshot_id: str) -> AgentReport:
     """Fork one sandbox from snapshot_id and run analysis for one perspective."""
@@ -24,7 +20,6 @@ async def run_agent(agent_id: int, snapshot_id: str) -> AgentReport:
 
     async with await AsyncSandbox.create(
         snapshot_id=snapshot_id,
-        # cpus / memory_mb omitted — inherited from snapshot for MEMORY restores
         allow_internet_access=False,
         timeout_secs=120,
     ) as sandbox:
